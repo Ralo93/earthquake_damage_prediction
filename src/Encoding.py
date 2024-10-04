@@ -4,8 +4,6 @@ import category_encoders as ce
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 
-
-
 def preprocess_data(df, base_columns, oh_columns):
     """
     Preprocesses the DataFrame by one-hot encoding and base encoding all categorical values,
@@ -13,11 +11,13 @@ def preprocess_data(df, base_columns, oh_columns):
 
     Parameters:
     df (pd.DataFrame): The input DataFrame to be preprocessed.
+    base_columns (list): List of columns to be base encoded.
+    oh_columns (list): List of columns to be one-hot encoded.
 
     Returns:
-    pd.DataFrame: The preprocessed DataFrame.
+    Pipeline: The preprocessing pipeline.
     """
-    # Identify cnumeric columns
+    # Identify numeric columns
     numeric_cols = df.select_dtypes(include=['number']).columns.tolist()
 
     # Define the transformers for categorical and numeric data
@@ -33,13 +33,12 @@ def preprocess_data(df, base_columns, oh_columns):
     # Combine transformers into a ColumnTransformer
     preprocessor = ColumnTransformer(
         transformers=[
-            ('cat', categorical_transformer),
+            ('cat', categorical_transformer, base_columns + oh_columns),
             ('num', numeric_transformer, numeric_cols)
         ]
     )
 
     # Create and fit the pipeline
     pipeline = Pipeline(steps=[('preprocessor', preprocessor)])
-
 
     return pipeline
