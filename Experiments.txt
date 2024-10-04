@@ -1,1 +1,5 @@
 1. Run XGB with hard coded hyperparameters and only trained on train set
+2. Run LGBM classifier on ALL data: Best so far
+3. Experiments with ALL data kept: Seems good
+
+4. Interaction terms of id
