@@ -2,4 +2,16 @@
 2. Run LGBM classifier on ALL data: Best so far
 3. Experiments with ALL data kept: Seems good
 
-4. Interaction terms of id
+For the best model:
+1. Outlier removal
+2. Unskew right skewed data
+3. Interaction terms of geoIDs
+4. BaseEncoding of geoIDs
+
+Feature splitting: no Improvement
+Clustering of height: No Improvement
+
+lgbm seems to perform better!
+Check max_depth of lgbm to 4: No improvement
+
+Encoding the geoIDs with different bases
