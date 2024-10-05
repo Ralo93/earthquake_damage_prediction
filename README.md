@@ -6,7 +6,7 @@ This repository contains our team's approach to the Earthquake Damage Prediction
 
 - Alan Tump
 - Shan Jiang
-- Raphael von Lotter
+- Raphael von Lottner
 
 ## Project Overview
 
@@ -27,7 +27,7 @@ Our approach consisted of data cleaning, preprocessing and trying different supe
 - [Reproduction](#reproduction)
 - [Future Work](#future-work)
 
-## Setup
+## Setup (coming soon)
 
 To get started with this project:
 
@@ -63,9 +63,9 @@ TODO: Create requirements.txt file
 
 We experimented with several models, including:
 
-1. [Model 1]
-2. [Model 2]
-3. [Model 3]
+1. LightGBMClassifier
+2. XGBoostClassifier
+3. RandomForrestClassifier
 
 [Brief description of each model and why it was chosen]
 
@@ -73,9 +73,14 @@ We experimented with several models, including:
 
 Our experimental process included:
 
-1. [Experiment 1]
-2. [Experiment 2]
-3. [Experiment 3]
+0. Kept all data except building_id
+1. Outlier removal on the 97th percentile
+2. Unskew right skewed data
+4. BaseEncoding of geoIDs with a base of 3
+5. Additional Auto-Encoding after the BaseEncoding to reduce dimensionality of GeoID features to 5
+6. Transforming the age column and make a new feature for very old buildings
+7. BaseEncoding of categorical features with base of 3
+8. Automatic hyperparameter tuning with bayesian search (hyperopt package)
 
 ### Experiment Results
 
@@ -84,15 +89,19 @@ Our experimental process included:
   - Test: 0.73
   (See AT_Exp_XG_BiasVar.ipynb for details)
 
-[Add more experiment results as needed]
+Other Experiments which did not improve results:
+Feature Splitting on the "has_superstructure..." columns
+Clustering on area and height
+Autoencoding of interaction features of geoIDs
+Dropping of columns which seemed not important
+Sequential models: Use two binary classificators to predict 1 | 2,3 then another model 2 | 3
 
 ## Results
-
-[Summary of our best results and performance metrics]
+![image](https://github.com/user-attachments/assets/d692bf77-cc40-4b4f-9a5f-16734166c145)
 
 ## Reproduction
 
-To reproduce our results:
+To reproduce our results: (coming soon)
 
 1. [Step 1]
 2. [Step 2]
@@ -100,7 +109,7 @@ To reproduce our results:
 
 ## Resources
 
-[Insert here: list of additional resources, datasets, or tools used]
+(coming soon)
 
 ## Future Work
 
