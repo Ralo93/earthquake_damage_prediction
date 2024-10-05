@@ -105,6 +105,8 @@ Other Experiments which did not improve results:
 - Autoencoding of interaction features of geoIDs
 - Dropping of columns which seemed not important
 - Sequential models: Use two binary classificators to predict 1 | 2,3 then another model 2 | 3
+- Replace geo-locations with few instances with another number (i.e., an numerical "other").
+- Target-encoding geolocation 
 
 ## Results
 ![image](https://github.com/user-attachments/assets/d692bf77-cc40-4b4f-9a5f-16734166c145)
