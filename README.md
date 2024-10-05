@@ -4,13 +4,17 @@ This repository contains our team's approach to the Earthquake Damage Prediction
 
 ## Team Members
 
-- [Team Member 1]
-- [Team Member 2]
-- [Team Member 3]
+- Alan Tump
+- Shan Jiang
+- Raphael von Lotter
 
 ## Project Overview
 
-[Brief description of the competition and our approach]
+Prediction of damage caused by an earthquake.
+We used a dataset by drivendata.org, which consists out of a collection of datapoints that represent buildings in an earthquake stroke area.
+The dataset is from 2015 and contains roughly 1/4million datapoints.
+
+Our approach consisted of data cleaning, preprocessing and trying different supervised learning algorithms. Further it included cross-validation and hyperparameter tuning using bayesian search.
 
 ## Table of Contents
 
