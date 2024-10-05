@@ -90,11 +90,11 @@ Our experimental process included:
   (See AT_Exp_XG_BiasVar.ipynb for details)
 
 Other Experiments which did not improve results:
-Feature Splitting on the "has_superstructure..." columns
-Clustering on area and height
-Autoencoding of interaction features of geoIDs
-Dropping of columns which seemed not important
-Sequential models: Use two binary classificators to predict 1 | 2,3 then another model 2 | 3
+- Feature Splitting on the "has_superstructure..." columns
+- Clustering on area and height
+- Autoencoding of interaction features of geoIDs
+- Dropping of columns which seemed not important
+- Sequential models: Use two binary classificators to predict 1 | 2,3 then another model 2 | 3
 
 ## Results
 ![image](https://github.com/user-attachments/assets/d692bf77-cc40-4b4f-9a5f-16734166c145)
