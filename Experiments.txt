@@ -3,10 +3,10 @@
 3. Experiments with ALL data kept: Seems good
 
 For the best model:
-1. Outlier removal
+1. Outlier removal on the 97th percentile
 2. Unskew right skewed data
-3. Interaction terms of geoIDs
-4. BaseEncoding of geoIDs
+4. BaseEncoding of geoIDs with a base of 3
+5. Additional Auto-Encoding after the BaseEncoding to reduce dimensionality of GeoID features to 5
 
 Feature splitting: no Improvement
 Clustering of height: No Improvement
