@@ -14,4 +14,4 @@ Clustering of height: No Improvement
 lgbm seems to perform better!
 Check max_depth of lgbm to 4: No improvement
 
-Encoding the geoIDs with different bases
+Use AutoEncoder for dim-reduction on baseN encoded columns!
