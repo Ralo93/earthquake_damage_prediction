@@ -14,7 +14,7 @@ Prediction of damage caused by an earthquake.
 We used a dataset by drivendata.org, which consists out of a collection of datapoints that represent buildings in an earthquake stroke area.
 The dataset is from 2015 and contains roughly 1/4million datapoints.
 
-Our approach consisted of data cleaning, preprocessing and trying different supervised learning algorithms. Further it included cross-validation and hyperparameter tuning using bayesian search.
+Our approach consisted of data cleaning, preprocessing and trying different supervised learning algorithms. Further it included hyperparameter tuning with cross-validation using bayesian search.
 
 ## Table of Contents
 
@@ -77,17 +77,25 @@ Our experimental process included:
 1. Outlier removal on the 97th percentile
 2. Unskew right skewed data
 4. BaseEncoding of geoIDs with a base of 3
-5. Additional Auto-Encoding after the BaseEncoding to reduce dimensionality of GeoID features to 5
-6. Transforming the age column and make a new feature for very old buildings
-7. BaseEncoding of categorical features with base of 3
-8. Automatic hyperparameter tuning with bayesian search (hyperopt package)
+5. Crossvalidation on the Auto-Encoding parameter dimensions (5, 10, 15, 20)
+6. Additional Auto-Encoding after the BaseEncoding to reduce dimensionality of GeoID features to 5
+7. Transforming the age column and make a new feature for very old buildings
+8. BaseEncoding of categorical features with base of 3
+9. Automatic hyperparameter tuning with bayesian search (hyperopt package)
 
 ### Experiment Results
 
-- AT: Average F1 score
-  - Train: 0.76
-  - Test: 0.73
-  (See AT_Exp_XG_BiasVar.ipynb for details)
+- LGBM: Average Micro F1 score
+  - Train: 0.7974
+  - Validation: 0.7443
+ 
+![image](https://github.com/user-attachments/assets/de47b871-ec0f-464a-a851-d42f4ce8644a)
+
+- XGB: Average F1 score
+  - Train: 0.8024
+  - Validation: 0.7419
+
+![image](https://github.com/user-attachments/assets/cfb66e84-918c-410c-aa1a-e74eed66e17a)
 
 Other Experiments which did not improve results:
 - Feature Splitting on the "has_superstructure..." columns
