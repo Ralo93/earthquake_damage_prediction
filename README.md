@@ -103,11 +103,12 @@ Our approach consisted out of the following steps:
 
 We experimented with several models, including:
 
-1. LightGBMClassifier
-2. XGBoostClassifier
-3. RandomForrestClassifier
+1. RandomForrestClassifier (used as a baseline)
+3. XGBoostClassifier (known for performing well on tabular data and classification tasks)
+4. LightGBMClassifier (also known to perform quite well, sometimes can perform better than xgboost)
 
-[Brief description of each model and why it was chosen]
+There are more modeling opportunities like catboost or stacked esembles. Unfortunately we did not have the time to try out that many more.
+
 
 ## Experiments
 
