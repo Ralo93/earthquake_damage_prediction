@@ -1,6 +1,6 @@
 # Earthquake Damage Prediction
 
-This repository contains our team's approach to the Earthquake Damage Prediction competition hosted on DrivenData.org.
+This repository contains our team's approach to the Earthquake Damage Prediction competition hosted on DrivenData.org. The challenge here was to submit a solution within 2 days, while managing a team. We were able to score the highest micro-F1-score out of all participants in the mini-competition hosted by DataScienceRetreat. Being only 1% below rank 1 in the overall competition, I would consider this a success.
 
 ## Team Members
 
