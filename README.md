@@ -29,30 +29,6 @@ As time was a constraint, we worked mainly in jupter labs (I know, not the perfe
 - [Reproduction](#reproduction)
 - [Future Work](#future-work)
 
-## Setup (coming soon)
-
-To get started with this project:
-
-1. Clone the repository:
-   ```
-   git clone [repository URL]
-   ```
-2. Create your own branch:
-   ```
-   git checkout -b [your-branch-name]
-   ```
-3. Set up your environment:
-   ```
-   conda create -p envs/dev_env python=3.12
-   python -m venv env
-   source env/bin/activate  # On Windows use `env\Scripts\activate`
-   ```
-4. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-
-TODO: Create requirements.txt file
 
 ## Data
 A first glimpse at the data gave us the following information:
