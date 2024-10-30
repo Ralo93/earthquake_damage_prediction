@@ -87,7 +87,13 @@ A first glimpse at the data gave us the following information:
 
 - For the beginning we dropped the building_id column and left the rest as it was.
 
-[Description of the dataset, including its source, features, and target variable]
+## EDA
+
+Plotting is always a good idea, check this out: 
+
+![newplot](https://github.com/user-attachments/assets/62a07560-cf48-40c1-a19d-d8f2c60e0dec)
+
+
 
 ## Approach
 
