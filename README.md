@@ -60,6 +60,8 @@ A first glimpse at the data gave us the following information:
 
 - The dataset consists of 260601 rows and 40 columns, one of which is the target, called "damage_grade".
 
+### The columns:
+
 'building_id', 'geo_level_1_id', 'geo_level_2_id', 'geo_level_3_id',
        'count_floors_pre_eq', 'age', 'area_percentage', 'height_percentage',
        'land_surface_condition', 'foundation_type', 'roof_type',
@@ -92,9 +94,9 @@ A first glimpse at the data gave us the following information:
 Plotting is always a good idea, key takeaways:
 
 - Geo_level_ids seem to be random and rather correspond to a certain location, which makes them categorical even though they are represented as numbers.
-- Many distributions are heavily right skewed, like age, height, area.
+- Many distributions are heavily right skewed, like age, height, area. We might want to take care of this later with log-transformations, depending on the models we use and how much time is left.
 - Some attributes are heavily imbalanced. It makes sense to plot them again the target variable to check if there is a significant difference - if the minority categories correlate significantly with variations in the target, the feature could still be valuable.
-- The distribution of the target variable is left skewed, making the target imbalanced.
+- The distribution of the target variable is left skewed, making the target imbalanced, but not too badly. It should be fine to work with it as it is.
   
 ![newplot](https://github.com/user-attachments/assets/62a07560-cf48-40c1-a19d-d8f2c60e0dec)
 
