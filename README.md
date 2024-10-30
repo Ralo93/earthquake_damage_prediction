@@ -6,7 +6,7 @@ This repository contains our team's approach to the Earthquake Damage Prediction
 
 - Submit a solution within 2 days, while managing a team.
 - We were able to score the highest micro-F1-score out of all participants in the mini-competition hosted by DataScienceRetreat.
-- Being only 1% below rank 1 in the overall competition, I would consider this a success, as we submitted only 6 solutions.
+- Being less than 1% below rank 1 in the overall competition, I would consider this a success, as we submitted only 6 solutions.
 
 ## Project Overview
 
