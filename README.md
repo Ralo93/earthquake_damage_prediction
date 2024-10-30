@@ -78,6 +78,11 @@ Plotting is always a good idea, key takeaways:
   
 ![newplot](https://github.com/user-attachments/assets/62a07560-cf48-40c1-a19d-d8f2c60e0dec)
 
+- Having a look at the numerical features, for spotting highly correlated features that might influence statistical tests if a certain model is chosen.
+  Removing highly correlated features or creating new features from them can also be a possible way to go.
+
+  ![image](https://github.com/user-attachments/assets/04b5ca73-5db3-4418-8aad-d8c5f01477c4)
+
 - What I love to do is make use of the mutual information package and see what the most relevant information is stored in the features in correspondance to my target variable. This is only a first scoring and without any context whatsoever, so a final model might decide very differently.
 
 - Key takeaways: Geo_level_ids seem to be of importance, many structure related features also seem to play a role, like foundation type, floor_type, roof_type which makes sense if you consider earthquake induced damage in buildings.
