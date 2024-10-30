@@ -1,5 +1,5 @@
 # Earthquake Damage Prediction
-![image](https://github.com/user-attachments/assets/f7475789-6abb-4b2f-9ff0-035835c9c0c5)
+<p align="center"> ![image](https://github.com/user-attachments/assets/f7475789-6abb-4b2f-9ff0-035835c9c0c5)  </p>
 <p align="center"> <em>Predicting building damage levels after an earthquake based on structural features and geographic data.</em> </p>
 This repository contains our team's approach to the Earthquake Damage Prediction competition hosted on DrivenData.org. 
 
