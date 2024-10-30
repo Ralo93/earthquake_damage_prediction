@@ -80,7 +80,7 @@ A first glimpse at the data gave us the following information:
        'damage_grade'
 
 - A description of the data already showed some potential outliers, e.g. in the age column:
-- 
+  
 ![image](https://github.com/user-attachments/assets/ec208ae4-a15b-4c24-ab37-0ca673cd1b9b)
 
 - The dataset consists of int64 and object datatypes, with no missing values overall (very convenient!)
