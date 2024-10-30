@@ -37,8 +37,13 @@ A first glimpse at the data gave us the following information:
 
 ### The columns:
 
-'building_id', 'geo_level_1_id', 'geo_level_2_id', 'geo_level_3_id',
-       'count_floors_pre_eq', 'age', 'area_percentage', 'height_percentage',
+#### 'building_id', 
+'geo_level_1_id', 
+'geo_level_2_id', 
+'geo_level_3_id',
+       'count_floors_pre_eq', 
+       'age', 
+       'area_percentage', 'height_percentage',
        'land_surface_condition', 'foundation_type', 'roof_type',
        'ground_floor_type', 'other_floor_type', 'position',
        'plan_configuration', 'has_superstructure_adobe_mud',
