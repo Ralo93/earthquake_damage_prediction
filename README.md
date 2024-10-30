@@ -16,6 +16,7 @@ The dataset is from 2015 and contains roughly 1/4million datapoints.
 
 Our approach consisted of EDA, data cleaning, preprocessing and trying different supervised learning algorithms. Further it included hyperparameter tuning with cross-validation using bayesian search.
 
+As time was a constraint, we worked mainly in jupter labs (I know, not the perfect IDE but for a quick prototyping and EDA etc. actually a good fit in my opinion).
 
 
 ## Table of Contents
@@ -55,7 +56,17 @@ To get started with this project:
 TODO: Create requirements.txt file
 
 ## Data
+A first glimpse at the data gave us the following information:
 
+- The dataset consists of 260601 rows and 40 columns, one of which is the target, called "damage_grade".
+![image](https://github.com/user-attachments/assets/8324e38d-03e8-4f36-b70c-94241dfda145)
+
+- A description of the data already showed some potential outliers, e.g. in the age column:
+![image](https://github.com/user-attachments/assets/ec208ae4-a15b-4c24-ab37-0ca673cd1b9b)
+
+- The dataset consists of int64 and object datatypes, with no missing values overall (very convenient!)
+
+- For the beginning we dropped the building_id column and left the rest as it was.
 
 [Description of the dataset, including its source, features, and target variable]
 
