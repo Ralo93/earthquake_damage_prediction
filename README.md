@@ -21,7 +21,6 @@ As time was a constraint, we worked mainly in jupter labs (I know, not the perfe
 
 ## Table of Contents
 
-- [Setup](#setup)
 - [Data](#data)
 - [Approach](#approach)
 - [Models](#models)
@@ -109,7 +108,15 @@ Plotting is always a good idea, key takeaways:
 
 ## Approach
 
-[Overview of our approach to solving the problem]
+Our approach consisted out of the following steps:
+
+- Transform the Geo_location_ids into categorical features using BaseN-Encoding (I think we used N=5 at the end but experimented with N=3, N=7)
+- Unskew skewed numerical columns by using a logarithmic transformation (this only helped marginally but still)
+- Target Re-encoding (from 1, 2, 3 -> 0, 1, 2) as xgb classifier requires it.
+- Train a baseline classifier (Random Forrest) with arbitrary hyperparameters.
+- Use lightGBM and XGBoost as advanced tree-based models.
+- Utilize MLFlow for experiment tracking and bayesian hyperparameter search.
+
 
 ## Models
 
