@@ -104,7 +104,8 @@ Plotting is always a good idea, key takeaways:
 
 - Key takeaways: Geo_level_ids seem to be of importance, many structure related features also seem to play a role, like foundation type, floor_type, roof_type which makes sense if you consider earthquake induced damage in buildings.
 
-![newplot](https://github.com/user-attachments/assets/20566ce0-d776-4b11-8794-e0a37038effe)
+![newplot (2)](https://github.com/user-attachments/assets/27afd78c-5f07-4e73-be6f-8936458d02bd)
+
 
 ## Approach
 
