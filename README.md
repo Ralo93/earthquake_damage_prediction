@@ -26,8 +26,6 @@ As time was a constraint, we worked mainly in jupter labs (I know, not the perfe
 - [Models](#models)
 - [Experiments](#experiments)
 - [Results](#results)
-- [Reproduction](#reproduction)
-- [Future Work](#future-work)
 
 
 ## Data
@@ -152,19 +150,3 @@ Other Experiments which did not improve results:
 ## Results
 ![image](https://github.com/user-attachments/assets/d692bf77-cc40-4b4f-9a5f-16734166c145)
 ![image](https://github.com/user-attachments/assets/0c700040-ab00-47a5-b43c-afc32e38504c)
-
-## Reproduction
-
-To reproduce our results: (coming soon)
-
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-
-## Resources
-
-(coming soon)
-
-## Future Work
-
-[Ideas for improving the model or extending the project]
