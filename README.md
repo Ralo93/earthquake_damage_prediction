@@ -1,4 +1,5 @@
 # Earthquake Damage Prediction
+![image](https://github.com/user-attachments/assets/f7475789-6abb-4b2f-9ff0-035835c9c0c5)
 
 This repository contains our team's approach to the Earthquake Damage Prediction competition hosted on DrivenData.org. 
 
