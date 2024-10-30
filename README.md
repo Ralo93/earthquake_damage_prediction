@@ -89,8 +89,13 @@ A first glimpse at the data gave us the following information:
 
 ## EDA
 
-Plotting is always a good idea, check this out: 
+Plotting is always a good idea, key takeaways:
 
+- Geo_level_ids seem to be random and rather correspond to a certain location, which makes them categorical even though they are represented as numbers.
+- Many distributions are heavily right skewed, like age, height, area.
+- Some attributes are heavily imbalanced. It makes sense to plot them again the target variable to check if there is a significant difference - if the minority categories correlate significantly with variations in the target, the feature could still be valuable.
+- The distribution of the target variable is left skewed, making the target imbalanced.
+  
 ![newplot](https://github.com/user-attachments/assets/62a07560-cf48-40c1-a19d-d8f2c60e0dec)
 
 
