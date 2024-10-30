@@ -1,12 +1,12 @@
 # Earthquake Damage Prediction
+<p align="center"> <img src="https://github.com/user-attachments/assets/f7475789-6abb-4b2f-9ff0-035835c9c0c5" alt="Earthquake Damage"> </p> <p align="center"> <em>Image source: drivendata.org.</em> </p>
+This repository contains our team's approach to the Earthquake Damage Prediction competition hosted on DrivenData.org. 
 
-This repository contains our team's approach to the Earthquake Damage Prediction competition hosted on DrivenData.org.
+### The challenge and the results
 
-## Team Members
-
-- Alan Tump
-- Shan Jiang
-- Raphael von Lottner
+- Submit a solution within 2 days, while managing a team.
+- We were able to score the highest micro-F1-score out of all participants in the mini-competition hosted by DataScienceRetreat.
+- Being less than 1% below rank 1 in the overall competition, I would consider this a success, as we submitted only 6 solutions and the very best in the competition probably overfitted to the hidden test set anyway. ;)
 
 ## Project Overview
 
@@ -14,60 +14,107 @@ Prediction of damage caused by an earthquake.
 We used a dataset by drivendata.org, which consists out of a collection of datapoints that represent buildings in an earthquake stroke area.
 The dataset is from 2015 and contains roughly 1/4million datapoints.
 
-Our approach consisted of data cleaning, preprocessing and trying different supervised learning algorithms. Further it included hyperparameter tuning with cross-validation using bayesian search.
+Our approach consisted of EDA, data cleaning, preprocessing and trying different supervised learning algorithms. Further it included hyperparameter tuning with cross-validation using bayesian search.
+
+As time was a constraint, we worked mainly in jupter labs (I know, not the perfect IDE but for a quick prototyping and EDA etc. actually a good fit in my opinion).
+
+The automated hyperparameter tuning can be found in src/hyperparameter_tuning.py.
+Results can be seen in the results folder.
+
 
 ## Table of Contents
 
-- [Setup](#setup)
 - [Data](#data)
 - [Approach](#approach)
 - [Models](#models)
 - [Experiments](#experiments)
 - [Results](#results)
-- [Reproduction](#reproduction)
-- [Future Work](#future-work)
 
-## Setup (coming soon)
-
-To get started with this project:
-
-1. Clone the repository:
-   ```
-   git clone [repository URL]
-   ```
-2. Create your own branch:
-   ```
-   git checkout -b [your-branch-name]
-   ```
-3. Set up your environment:
-   ```
-   python -m venv env
-   source env/bin/activate  # On Windows use `env\Scripts\activate`
-   ```
-4. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-
-TODO: Create requirements.txt file
 
 ## Data
+A first glimpse at the data gave us the following information:
 
-[Description of the dataset, including its source, features, and target variable]
+- The dataset consists of 260601 rows and 40 columns, one of which is the target, called "damage_grade".
+
+### The columns:
+
+#### 'building_id', 
+'geo_level_1_id', 
+'geo_level_2_id', 
+'geo_level_3_id',
+       'count_floors_pre_eq', 
+       'age', 
+       'area_percentage', 'height_percentage',
+       'land_surface_condition', 'foundation_type', 'roof_type',
+       'ground_floor_type', 'other_floor_type', 'position',
+       'plan_configuration', 'has_superstructure_adobe_mud',
+       'has_superstructure_mud_mortar_stone', 'has_superstructure_stone_flag',
+       'has_superstructure_cement_mortar_stone',
+       'has_superstructure_mud_mortar_brick',
+       'has_superstructure_cement_mortar_brick', 'has_superstructure_timber',
+       'has_superstructure_bamboo', 'has_superstructure_rc_non_engineered',
+       'has_superstructure_rc_engineered', 'has_superstructure_other',
+       'legal_ownership_status', 'count_families', 'has_secondary_use',
+       'has_secondary_use_agriculture', 'has_secondary_use_hotel',
+       'has_secondary_use_rental', 'has_secondary_use_institution',
+       'has_secondary_use_school', 'has_secondary_use_industry',
+       'has_secondary_use_health_post', 'has_secondary_use_gov_office',
+       'has_secondary_use_use_police', 'has_secondary_use_other',
+       'damage_grade'
+
+- A description of the data already showed some potential outliers, e.g. in the age column, as the max age of 995 is well above the 75th percentile. Even way above the 99th percentile as it will turn out. We might want to create a new feature for this or cap it so the outliers wont play a significant role for this feature.
+  
+![image](https://github.com/user-attachments/assets/ec208ae4-a15b-4c24-ab37-0ca673cd1b9b)
+
+- The dataset consists of int64 and object datatypes, with no missing values overall (very convenient!)
+
+- For the beginning we dropped the building_id column and left the rest as it was.
+
+## EDA
+
+Plotting is always a good idea, key takeaways:
+
+- Geo_level_ids seem to be random and rather correspond to a certain location, which makes them categorical even though they are represented as numbers.
+- Many distributions are heavily right skewed, like age, height, area. We might want to take care of this later with log-transformations, depending on the models we use and how much time is left.
+- Some attributes are heavily imbalanced. It makes sense to plot them again the target variable to check if there is a significant difference - if the minority categories correlate significantly with variations in the target, the feature could still be valuable.
+- The distribution of the target variable is left skewed, making the target imbalanced, but not too badly. It should be fine to work with it as it is.
+  
+![newplot](https://github.com/user-attachments/assets/62a07560-cf48-40c1-a19d-d8f2c60e0dec)
+
+- Having a look at the numerical features, for spotting highly correlated features that might influence statistical tests if a certain model is chosen.
+  Removing highly correlated features or creating new features from them can also be a possible way to go.
+
+  ![image](https://github.com/user-attachments/assets/04b5ca73-5db3-4418-8aad-d8c5f01477c4)
+
+- What I love to do is make use of the mutual information package and see what the most relevant information is stored in the features in correspondance to my target variable. This is only a first scoring and without any context whatsoever, so a final model might decide very differently.
+
+- Key takeaways: Geo_level_ids seem to be of importance, many structure related features also seem to play a role, like foundation type, floor_type, roof_type which makes sense if you consider earthquake induced damage in buildings.
+
+![newplot (2)](https://github.com/user-attachments/assets/27afd78c-5f07-4e73-be6f-8936458d02bd)
+
 
 ## Approach
 
-[Overview of our approach to solving the problem]
+Our approach consisted out of the following steps:
+
+- Transform the Geo_location_ids into categorical features using BaseN-Encoding (I think we used N=5 at the end but experimented with N=3, N=7)
+- Unskew skewed numerical columns by using a logarithmic transformation (this only helped marginally but still)
+- Target Re-encoding (from 1, 2, 3 -> 0, 1, 2) as xgb classifier requires it.
+- Train a baseline classifier (Random Forrest) with arbitrary hyperparameters.
+- Use lightGBM and XGBoost as advanced tree-based models.
+- Utilize MLFlow for experiment tracking and bayesian hyperparameter search.
+
 
 ## Models
 
 We experimented with several models, including:
 
-1. LightGBMClassifier
-2. XGBoostClassifier
-3. RandomForrestClassifier
+1. RandomForrestClassifier (used as a baseline)
+3. XGBoostClassifier (known for performing well on tabular data and classification tasks)
+4. LightGBMClassifier (also known to perform quite well, sometimes can perform better than xgboost)
 
-[Brief description of each model and why it was chosen]
+There are more modeling opportunities like catboost or stacked esembles. Unfortunately we did not have the time to try out that many more.
+
 
 ## Experiments
 
@@ -111,19 +158,3 @@ Other Experiments which did not improve results:
 ## Results
 ![image](https://github.com/user-attachments/assets/d692bf77-cc40-4b4f-9a5f-16734166c145)
 ![image](https://github.com/user-attachments/assets/0c700040-ab00-47a5-b43c-afc32e38504c)
-
-## Reproduction
-
-To reproduce our results: (coming soon)
-
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-
-## Resources
-
-(coming soon)
-
-## Future Work
-
-[Ideas for improving the model or extending the project]
