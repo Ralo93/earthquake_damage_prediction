@@ -1,6 +1,6 @@
 # Earthquake Damage Prediction
 ![image](https://github.com/user-attachments/assets/f7475789-6abb-4b2f-9ff0-035835c9c0c5)
-
+(source of image: https://www.drivendata.org/competitions/57/nepal-earthquake/)
 This repository contains our team's approach to the Earthquake Damage Prediction competition hosted on DrivenData.org. 
 
 ### The challenge and the results
