@@ -81,7 +81,7 @@ A first glimpse at the data gave us the following information:
        'has_secondary_use_use_police', 'has_secondary_use_other',
        'damage_grade'
 
-- A description of the data already showed some potential outliers, e.g. in the age column:
+- A description of the data already showed some potential outliers, e.g. in the age column, as the max age of 995 is well above the 75th percentile. Even way above the 99th percentile as it will turn out. We might want to create a new feature for this or cap it so the outliers wont play a significant role for this feature.
   
 ![image](https://github.com/user-attachments/assets/ec208ae4-a15b-4c24-ab37-0ca673cd1b9b)
 
