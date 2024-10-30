@@ -59,9 +59,28 @@ TODO: Create requirements.txt file
 A first glimpse at the data gave us the following information:
 
 - The dataset consists of 260601 rows and 40 columns, one of which is the target, called "damage_grade".
-![image](https://github.com/user-attachments/assets/8324e38d-03e8-4f36-b70c-94241dfda145)
+
+'building_id', 'geo_level_1_id', 'geo_level_2_id', 'geo_level_3_id',
+       'count_floors_pre_eq', 'age', 'area_percentage', 'height_percentage',
+       'land_surface_condition', 'foundation_type', 'roof_type',
+       'ground_floor_type', 'other_floor_type', 'position',
+       'plan_configuration', 'has_superstructure_adobe_mud',
+       'has_superstructure_mud_mortar_stone', 'has_superstructure_stone_flag',
+       'has_superstructure_cement_mortar_stone',
+       'has_superstructure_mud_mortar_brick',
+       'has_superstructure_cement_mortar_brick', 'has_superstructure_timber',
+       'has_superstructure_bamboo', 'has_superstructure_rc_non_engineered',
+       'has_superstructure_rc_engineered', 'has_superstructure_other',
+       'legal_ownership_status', 'count_families', 'has_secondary_use',
+       'has_secondary_use_agriculture', 'has_secondary_use_hotel',
+       'has_secondary_use_rental', 'has_secondary_use_institution',
+       'has_secondary_use_school', 'has_secondary_use_industry',
+       'has_secondary_use_health_post', 'has_secondary_use_gov_office',
+       'has_secondary_use_use_police', 'has_secondary_use_other',
+       'damage_grade'
 
 - A description of the data already showed some potential outliers, e.g. in the age column:
+- 
 ![image](https://github.com/user-attachments/assets/ec208ae4-a15b-4c24-ab37-0ca673cd1b9b)
 
 - The dataset consists of int64 and object datatypes, with no missing values overall (very convenient!)
