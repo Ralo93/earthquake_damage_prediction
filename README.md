@@ -18,6 +18,9 @@ Our approach consisted of EDA, data cleaning, preprocessing and trying different
 
 As time was a constraint, we worked mainly in jupter labs (I know, not the perfect IDE but for a quick prototyping and EDA etc. actually a good fit in my opinion).
 
+The automated hyperparameter tuning can be found in src/hyperparameter_tuning.py.
+Results can be seen in the results folder.
+
 
 ## Table of Contents
 
