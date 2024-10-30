@@ -14,7 +14,9 @@ Prediction of damage caused by an earthquake.
 We used a dataset by drivendata.org, which consists out of a collection of datapoints that represent buildings in an earthquake stroke area.
 The dataset is from 2015 and contains roughly 1/4million datapoints.
 
-Our approach consisted of data cleaning, preprocessing and trying different supervised learning algorithms. Further it included hyperparameter tuning with cross-validation using bayesian search.
+Our approach consisted of EDA, data cleaning, preprocessing and trying different supervised learning algorithms. Further it included hyperparameter tuning with cross-validation using bayesian search.
+
+
 
 ## Table of Contents
 
@@ -41,6 +43,7 @@ To get started with this project:
    ```
 3. Set up your environment:
    ```
+   conda create -p envs/dev_env python=3.12
    python -m venv env
    source env/bin/activate  # On Windows use `env\Scripts\activate`
    ```
@@ -52,6 +55,7 @@ To get started with this project:
 TODO: Create requirements.txt file
 
 ## Data
+
 
 [Description of the dataset, including its source, features, and target variable]
 
