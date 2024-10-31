@@ -16,9 +16,6 @@ Our approach consisted of EDA, data cleaning, preprocessing and trying different
 
 As time was a constraint, we worked mainly in jupter labs (I know, not the perfect IDE but for a quick prototyping and EDA etc. actually a good fit in my opinion).
 
-The automated hyperparameter tuning can be found in src/hyperparameter_tuning.py.
-Results can be seen in the results folder.
-
 
 ## Table of Contents
 
@@ -95,12 +92,10 @@ Plotting is always a good idea, key takeaways:
 
 Our approach consisted out of the following steps:
 
-- Transform the Geo_location_ids into categorical features using BaseN-Encoding (I think we used N=5 at the end but experimented with N=3, N=7)
-- Unskew skewed numerical columns by using a logarithmic transformation (this only helped marginally but still)
-- Target Re-encoding (from 1, 2, 3 -> 0, 1, 2) as xgb classifier requires it.
-- Train a baseline classifier (Random Forrest) with arbitrary hyperparameters.
-- Use lightGBM and XGBoost as advanced tree-based models.
-- Utilize MLFlow for experiment tracking and bayesian hyperparameter search.
+- Extensive EDA and data cleaning
+- Preprocessing and encoding of categorical variables
+- Hyperparameter tuning using Bayesian search, tracked with MLFlow
+- Model experimentation with supervised learning algorithms
 
 
 ## Models
@@ -111,22 +106,21 @@ We experimented with several models, including:
 3. XGBoostClassifier (known for performing well on tabular data and classification tasks)
 4. LightGBMClassifier (also known to perform quite well, sometimes can perform better than xgboost)
 
-There are more modeling opportunities like catboost or stacked esembles. Unfortunately we did not have the time to try out that many more.
+Model Selection Considerations
 
+- We prioritized models suitable for tabular data and imbalanced classes, ultimately selecting gradient boosting methods (XGBoost and LightGBM) for their scalability and performance.
+- Due to time constraints, we did not try ensemble methods like stacking but recognize them as potential improvements for future work.
 
 ## Experiments
 
 Our experimental process included:
 
-0. Kept all data except building_id
-1. Outlier removal on the 97th percentile
-2. Unskew right skewed data
-4. BaseEncoding of geoIDs with a base of 3
-5. Crossvalidation on the Auto-Encoding parameter dimensions (5, 10, 15, 20)
-6. Additional Auto-Encoding after the BaseEncoding to reduce dimensionality of GeoID features to 5
-7. Transforming the age column and make a new feature for very old buildings
-8. BaseEncoding of categorical features with base of 3
-9. Automatic hyperparameter tuning with bayesian search (hyperopt package)
+- Removing outliers at the 97th percentile
+- Transforming skewed data
+- Encoding categorical features, like geo_level_ids, using Base-N encoding
+- Reducing dimensionality of geoID features through auto-encoding
+- Transforming age data to handle outliers
+- Hyperparameter tuning using Bayesian search (hyperopt package)
 
 ### Experiment Results
 
@@ -135,8 +129,6 @@ Our experimental process included:
   - Validation: 0.7443
  
 ![image](https://github.com/user-attachments/assets/de47b871-ec0f-464a-a851-d42f4ce8644a)
-
-
 
 - XGB: Average F1 score
   - Train: 0.8024
@@ -154,5 +146,10 @@ Other Experiments which did not improve results:
 - Target-encoding geolocation 
 
 ## Results
+
+Rank on the competition hosted by Drivendata.org:
+
 ![image](https://github.com/user-attachments/assets/d692bf77-cc40-4b4f-9a5f-16734166c145)
+
+Snippet of trained models using MLFlow:
 ![image](https://github.com/user-attachments/assets/0c700040-ab00-47a5-b43c-afc32e38504c)
