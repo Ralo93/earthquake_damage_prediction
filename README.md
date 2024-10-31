@@ -4,15 +4,13 @@ This repository contains our team's approach to the Earthquake Damage Prediction
 
 ### The challenge and the results
 
-- Submit a solution within 2 days, while managing a team.
+- Submit a solution within two days, while managing a team of three.
 - We were able to score the highest micro-F1-score out of all participants in the mini-competition hosted by DataScienceRetreat.
 - With less than 1% below rank 1 in the overall competition, this project was a success with just six submissions. Notably, the top-ranking models likely overfitted to the hidden test set.
   
 ## Project Overview
 
-Prediction of damage caused by an earthquake.
-We used a dataset by drivendata.org, which consists out of a collection of datapoints that represent buildings in an earthquake stroke area.
-The dataset is from 2015 and contains roughly 1/4million datapoints.
+This project focuses on predicting earthquake-induced damage to buildings based on geospatial and structural data. We used DrivenData’s earthquake dataset, which contains data on approximately 260,601 buildings from 2015.
 
 Our approach consisted of EDA, data cleaning, preprocessing and trying different supervised learning algorithms. Further it included hyperparameter tuning with cross-validation using bayesian search.
 
