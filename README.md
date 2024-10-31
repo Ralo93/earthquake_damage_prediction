@@ -6,8 +6,8 @@ This repository contains our team's approach to the Earthquake Damage Prediction
 
 - Submit a solution within 2 days, while managing a team.
 - We were able to score the highest micro-F1-score out of all participants in the mini-competition hosted by DataScienceRetreat.
-- Being less than 1% below rank 1 in the overall competition, I would consider this a success, as we submitted only 6 solutions and the very best in the competition probably overfitted to the hidden test set anyway. ;)
-
+- With less than 1% below rank 1 in the overall competition, this project was a success with just six submissions. Notably, the top-ranking models likely overfitted to the hidden test set.
+  
 ## Project Overview
 
 Prediction of damage caused by an earthquake.
