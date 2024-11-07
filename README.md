@@ -33,17 +33,17 @@ A first glimpse at the data gave us the following information:
 
 ## Key Dataset Columns  
 
-### Identifiers and Geographic Information  
+#### Identifiers and Geographic Information  
 building_id: Unique identifier for each building.   
 geo_level_1_id, geo_level_2_id, geo_level_3_id: Geographic levels.  
 
-### Building Characteristics  
+#### Building Characteristics  
 count_floors_pre_eq: Number of floors before the earthquake.  
 age: Age of the building.  
 area_percentage: Floor area as a percentage of the property.  
 height_percentage: Height as a percentage.  
 
-### Structural and Material Information  
+#### Structural and Material Information  
 foundation_type: Type of foundation.  
 roof_type: Type of roof.  
 ground_floor_type: Type of ground floor.  
@@ -56,7 +56,7 @@ has_secondary_use: Indicates if there is any secondary use.
 has_secondary_use_agriculture: Agricultural use.  
 has_secondary_use_school: School use.  
 
-### Target Variable  
+#### Target Variable  
 damage_grade: Assigned damage grade for the building.  
   
 - A description of the data already showed some potential outliers, e.g. in the age column, as the max age of 995 is well above the 75th percentile. Even way above the 99th percentile as it will turn out. We might want to create a new feature for this or cap it so the outliers wont play a significant role for this feature.
