@@ -31,31 +31,33 @@ A first glimpse at the data gave us the following information:
 
 - The dataset consists of 260601 rows and 40 columns, one of which is the target, called "damage_grade".
 
-### The columns:
+## Key Dataset Columns
+Identifiers and Geographic Information
 
-'building_id', 
-'geo_level_1_id', 
-'geo_level_2_id', 
-'geo_level_3_id',
-       'count_floors_pre_eq', 
-       'age', 
-       'area_percentage', 'height_percentage',
-       'land_surface_condition', 'foundation_type', 'roof_type',
-       'ground_floor_type', 'other_floor_type', 'position',
-       'plan_configuration', 'has_superstructure_adobe_mud',
-       'has_superstructure_mud_mortar_stone', 'has_superstructure_stone_flag',
-       'has_superstructure_cement_mortar_stone',
-       'has_superstructure_mud_mortar_brick',
-       'has_superstructure_cement_mortar_brick', 'has_superstructure_timber',
-       'has_superstructure_bamboo', 'has_superstructure_rc_non_engineered',
-       'has_superstructure_rc_engineered', 'has_superstructure_other',
-       'legal_ownership_status', 'count_families', 'has_secondary_use',
-       'has_secondary_use_agriculture', 'has_secondary_use_hotel',
-       'has_secondary_use_rental', 'has_secondary_use_institution',
-       'has_secondary_use_school', 'has_secondary_use_industry',
-       'has_secondary_use_health_post', 'has_secondary_use_gov_office',
-       'has_secondary_use_use_police', 'has_secondary_use_other',
-       'damage_grade'
+building_id: Unique identifier for each building.
+geo_level_1_id, geo_level_2_id, geo_level_3_id: Geographic levels.
+Building Characteristics
+
+count_floors_pre_eq: Number of floors before the earthquake.
+age: Age of the building.
+area_percentage: Floor area as a percentage of the property.
+height_percentage: Height as a percentage.
+Structural and Material Information
+
+foundation_type: Type of foundation.
+roof_type: Type of roof.
+ground_floor_type: Type of ground floor.
+plan_configuration: Building's structural configuration.
+has_superstructure_rc_engineered: Presence of engineered reinforced concrete.
+has_superstructure_timber: Presence of timber in the structure.
+Secondary Use Indicators
+
+has_secondary_use: Indicates if there is any secondary use.
+has_secondary_use_agriculture: Agricultural use.
+has_secondary_use_school: School use.
+Target Variable
+
+damage_grade: Assigned damage grade for the building.
 
 - A description of the data already showed some potential outliers, e.g. in the age column, as the max age of 995 is well above the 75th percentile. Even way above the 99th percentile as it will turn out. We might want to create a new feature for this or cap it so the outliers wont play a significant role for this feature.
   
